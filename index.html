@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modulo 1</title>
+    <link rel="stylesheet" href="../PM1-AgustinTaborda/styles/reset.css">
+    <link rel="stylesheet" href="../PM1-AgustinTaborda/styles/styles.css">
 </head>
 <body>
-    <h1>Proyecto M1</h1>
-</body>
+    
+    <section class="aboutMe">
+        <h2>About me</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis placeat reprehenderit vero quod quibusdam quisquam accusamus reiciendis voluptatibus fugiat! Neque officiis veniam ipsum consequatur fugit qui dolore, nemo voluptatem nesciunt? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi explicabo fugit aliquam tempora reiciendis maiores consectetur? Culpa sit adipisci porro ducimus libero cupiditate sunt, reiciendis reprehenderit cumque natus quasi aliquam!
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem blanditiis distinctio exercitationem dolorum harum quisquam incidunt animi velit accusamus deserunt optio corporis unde nam ullam, dolores soluta earum voluptates ab!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorum, expedita fuga laborum odit, nisi maxime ratione voluptate illo quidem debitis laudantium suscipit nulla autem. Reiciendis qui vitae tempora neque.co</p>
+    </section>
+
+    <section class="misTecFav">
+        <h2>Mis Tecnologias Favoritas</h2>
+        <div class="tecnologiasFavoritas">
+            <div class="tec"><p>HTM</p><img src="html.jpeg" alt="HTML"></div>
+            <div class="tec"><p>CSS</p><img src="css.jpeg" alt="CSS"></div>
+            <div class="tec"><p>JAVASCRIPT</p><img src="js.jpeg" alt="JS"></div>
+        </div>
+    </section>
+
+    <section class="misActFav">
+        <h2>Mis Actividades Favoritas</h2>
+    
+        <div id="formularioActividades" class="formularioActividades">
+            <form action="" id="formulario">
+                <label for="titulo">Actividad</label>
+                <input type="text" placeholder="Cual es el titulo" name="titulo" id="titulo"><br>
+                
+                <label for="descripcion">Descripcion</label>
+                <input type="text" placeholder="Coloque aqui una descripcion" name="descripcion" id="descripcion"><br>
+                
+                <label for="url">Imagen</label>
+                <input type="text" placeholder="Coloque aqui el URL de la imagen" name="url" id="url"><br>
+                
+                <button type="submit" id="buttonAddActivity">Agregar</button>
+            </form>
+        </div>
+        
+        <div id="containerTarjetas" class="containerTarjetas">
+        </div>
+    </section>  
+
+<script type="module" src="scripts/index.js"></script>
+
+</body> 
 </html>
