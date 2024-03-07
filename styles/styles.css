@@ -139,6 +139,11 @@ li {
 }
 #formulario input[type="text"]:not(:placeholder-shown) {
     border-right: 35px solid var(--color1);
+    
+}
+
+#descripcion{
+    max-lines: 12;
 }
 
 #buttonAddActivity{  
@@ -188,6 +193,7 @@ li {
     background-color: var(--color3);
     height:fit-content;
     max-height: 450px;
+    position: relative;
   }
   
   /* Estilos para el título de la tarjeta */
