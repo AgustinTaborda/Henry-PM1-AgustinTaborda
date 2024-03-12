@@ -1,4 +1,4 @@
-
+//Definiendo la clase Activity
 class Activity {
     constructor (id, title, description, imgURL) {
         this.id = id
@@ -8,6 +8,7 @@ class Activity {
     }
 }
 
+//Definiendo la clase Repository
 class Repository {
     constructor () {
         this.activities = JSON.parse(localStorage.getItem('activities')) || [];
@@ -44,14 +45,15 @@ class Repository {
     }
 } 
 
+//Inicializando nuestra 'base de datos'
 const repositorio = new Repository()
 
+//Inicializando los selectores que utilizaremos
 const formulario = document.getElementById('formulario')
-
 const containerTarjetas = document.getElementById('containerTarjetas')
-
 const buttonAddActivities = document.getElementById('buttonAddActivity')
 
+//Verifiacion de datos del formulario
 const datosForm = function (formulario) {
     const titulo = formulario.titulo.value;
     const descripcion = formulario.descripcion.value;
@@ -69,6 +71,7 @@ const verificarCampos = function () {
     return true;
 }
 
+//Creando el html de las tarjetas de actividades
 const crearTarjeta = function (id, title, description, imgURL) {
     const nuevaTarjeta = document.createElement('div')
     const tituloNuevaTarjeta = document.createElement('h3')
@@ -94,12 +97,12 @@ const crearTarjeta = function (id, title, description, imgURL) {
     nuevaTarjeta.appendChild(basurero)
     containerTarjetas.appendChild(nuevaTarjeta)
 
-    basurero.addEventListener('click', eliminarTarjetas)
-
+    basurero.addEventListener('click', eliminarTarjetas) //Escuchador del evento eliminar tarjetas
 
     return nuevaTarjeta;
 }
 
+//Creo una funcion que me ayude a renderizar las tarjetas para luego utilizarla cada vez que lo necesite
 const refrescarTarjetas = function () {
     containerTarjetas.innerHTML = ''
     const tarjetasHTML = repositorio.getAllActivities().map(activity => {
@@ -115,11 +118,10 @@ const refrescarTarjetas = function () {
     }
 }
 
-
+// Creacion de nuevas tarjetas desde el formulario
 const nuevaActivity = function (event) {
     event.preventDefault();
     if (verificarCampos()) {
-
         const {titulo, descripcion, url} =  datosForm(formulario)
         repositorio.createActivity (titulo, descripcion, url);
         formulario.reset()
@@ -134,7 +136,6 @@ const nuevaActivity = function (event) {
 buttonAddActivities.addEventListener('click', nuevaActivity)
 
 // Eliminando Tarjetas
-
 const eliminarTarjetas = function (event) {
     let elementoClickeado = event.target
     
@@ -153,4 +154,5 @@ const eliminarTarjetas = function (event) {
 }.bind(repositorio)
 
 refrescarTarjetas();
-// module.export = { Activity , Repository};
+
+module.export = {Activity , Repository};
