@@ -1,14 +1,14 @@
 {
   "name": "m1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Henry - Modulo 1",
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
     "start": "live-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Agustin Taborda",
   "license": "ISC",
   "dependencies": {
     "jasmine": "^5.1.0",
