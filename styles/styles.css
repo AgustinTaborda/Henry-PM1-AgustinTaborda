@@ -2,9 +2,11 @@
 
 /* Color Theme Swatches in Hex */
 :root {
-    --color1: #EC8B5E; 
-    --color2: #0F164A; 
-    --color3: #0f164ac5; 
+    --color1: rgb(54, 54, 55); 
+    --color2: rgba(213,228,74); 
+    --color3: rgba(246,255,145); 
+    --color4: #262626; 
+    --color5: rgb(250,250,250);
 }
 
 /* Estilos generales */
@@ -14,7 +16,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--color3);
+    background-color: var(--color4);
 }
 
 .container {
@@ -52,21 +54,30 @@ li {
     margin: 20px 40px 40px;
     padding: 60px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(255, 249, 249, 0.1);
     color: white;
 
     h2{
         font-size: 20px;
         font-weight: bold;      
         text-align: center;
-        color: var(--color3);
-        border-bottom: var(--color3) 3px solid ;
+        color: var(--color2);
+        border-bottom: var(--color2) 3px solid ;
     }
 }
 
 .aboutMe{
+    article {
+        h2 {
+            svg {
+                border: 20px;
+                height: 20px;
+                fill: var(--color2);
+            }
+        }
+    }
     p{
-        color: var(--color2);
+        color: var(--color5);
         text-align: justify;
     }
 }
@@ -80,7 +91,7 @@ li {
 }
     
 .tec{
-    max-width: 30%;
+    max-width: 20%;
     img{
         display: block;
         max-width:100%;
@@ -94,16 +105,16 @@ li {
     p{
         text-align: center;
         font-size: 16px;
-        color: var(--color3);
+        color: var(--color5);
         text-shadow: white 0px 0px 15px;
     }
 }
     
 .formularioActividades {
-    background-color: var(--color2);
+    background-color: var(--color4);
     padding: 50px 0px 40px 0px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--color2);
     text-align: center;
     opacity: 0.9;
     margin-bottom: 80px;
@@ -111,10 +122,11 @@ li {
 }
 
 #formulario label {
+    color: var(--color3);
     display: block;
     margin-bottom: 10px;
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-align: left;
     padding-left: 18%;
 }
@@ -135,8 +147,9 @@ li {
 #formulario input[type="text"]:focus{
     transform: scale(1.05);
 }
+
 #formulario input[type="text"]:not(:placeholder-shown) {
-    border-right: 35px solid var(--color1);
+    border-right: 35px solid var(--color2);
     
 }
 
@@ -145,13 +158,14 @@ li {
 }
 
 #buttonAddActivity{  
-    background-color: var(--color1);
-    color: white;
+    background-color: var(--color2);
+    color: var(--color4);
+    font-weight: bold;
     opacity: 0.85;
     padding: 10px 20px;
     border-radius: 25px; 
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px var(--color2); 
     transition: all 0.3s ease; 
     margin-top: 20px;
 }
@@ -172,7 +186,7 @@ li {
     border: 1.75px dotted var(--color2);
     border-radius: 10px; 
     padding: 50px;
-    background-color: var(--color1);
+    background-color: var(--color4);
   }
 
 /* Estilos base para las tarjetas */
@@ -186,7 +200,7 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden; /* Evitar que la sombra aumente el tamaño de la tarjeta */
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    background-color: var(--color3);
+    background-color: var(--color1);
     height:fit-content;
     max-height: 450px;
     position: relative;
@@ -194,6 +208,7 @@ li {
   
   /* Estilos para el título de la tarjeta */
   .card h3 {
+    color: var(--color2);
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -205,6 +220,7 @@ li {
   
   /* Estilos para el texto de la tarjeta */
   .card p {
+    color: var(--color3);
     padding: 10px;
     font-size: 16px;
     line-height: 1.5; 
@@ -229,11 +245,59 @@ li {
     top: 5px;
     right: 15px;
     cursor: pointer;
-    color: var(--color1);
+    color: var(--color2);
     font-size: 20px;
     transition: transform .5s ease;
 }
 
 .basureroTarjetas:hover {
     transform: scale(1.3) rotate(180deg) ;   
+}
+
+.social{
+    border-top: var(--color2) 2px solid;
+    border-bottom: var(--color2) 2px solid;
+    padding: 10px;
+    background-color: var(--color4);
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    a{
+        width: 5%;
+    }
+    svg{
+        height: 35px;
+        fill: var(--color2);
+        :hover{
+            fill: var(--color3);
+        }
+    }
+}
+
+.containerScroll {
+    width: 100%;
+    padding: 0;
+    overflow-y: scroll;
+    margin: 0;
+}
+
+.content {
+    height: 100%; 
+}
+  
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; 
+    background-color: transparent; 
+    z-index: 1000; 
+}
+  
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color2); 
+    transition: width 0.3s ease; 
 }
